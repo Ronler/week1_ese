@@ -38,6 +38,27 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
+  print_statistics(test, SIZE);
+
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(unsigned char *array, int size){
+  
+  printf("The original Array:\n");
+  print_array(array, size);
+  sort_array(array, size);
+  printf("Sorted array:\n");
+  print_array(array, size);
+  printf("Meadian of array: %d", find_median(array, size));
+  printf("Mean of array: %d", find_mean(array, size));
+  printf("Max of array: %d", find_max(array, size));
+  printf("Min of array: %d", fine_min(array, size));
+}
+
+void print_array(unsigned char *arr, int len){
+  for (int i = 0; i < len;  i++){
+    printf(" %d, ", arr[i]);
+  }
+}
