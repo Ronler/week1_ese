@@ -23,13 +23,14 @@
 
 /* Add Your Declarations and Function Comments here */ 
 
-void print_statistics(unsigned char *array);
-void print_array(unsigned char *arr);
-void sort_array(unsigned char *arr);
-int find_median(unsigned char *arr);
-int find_mean(unsigned char *arr);
-int find_maximum(unsigned char *arr);
-int find_minimum(unsigned char *arr);
+void print_statistics(unsigned char *array, unsigned int len);
+void print_array(unsigned char *arr, unsigned int len);
+void sort_array(unsigned char *arr, unsigned int len);
+unsigned char find_median(unsigned char *arr, unsigned int len);
+unsigned char find_mean(unsigned char *arr, unsigned int len);
+unsigned char find_maximum(unsigned char *arr, unsigned int len);
+unsigned char find_minimum(unsigned char *arr, unsigned int len);
+void swap(unsigned char *one, unsigned char *two);
 
 /**
  * @brief <Add Brief Description of Function Here>
