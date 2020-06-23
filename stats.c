@@ -27,7 +27,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+int main() {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -38,27 +38,74 @@ void main() {
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
 
-  print_statistics(test, SIZE);
+  print_array(test, SIZE);
+  printf("Median of array: %d\n", find_median(test, SIZE));
+  printf("Maximum of array: %d\n", find_maximum(test, SIZE));
+  printf("Minimum of array: %d\n", find_minimum(test, SIZE));
+  printf("Mean of array: %d\n\n", find_mean(test, SIZE));
+  /*print_statistics(test, SIZE);*/
 
 }
 
 /* Add other Implementation File Code Here */
 
-void print_statistics(unsigned char *array, int size){
+/*void print_statistics(unsigned char *array, int size){
   
   printf("The original Array:\n");
   print_array(array, size);
   sort_array(array, size);
   printf("Sorted array:\n");
   print_array(array, size);
-  printf("Meadian of array: %d", find_median(array, size));
+  printf("Median of array: %d", find_median(array, size));
   printf("Mean of array: %d", find_mean(array, size));
-  printf("Max of array: %d", find_max(array, size));
-  printf("Min of array: %d", fine_min(array, size));
+  printf("Max of array: %d", find_maxinum(array, size));
+  printf("Min of array: %d", find_minimum(array, size));
 }
-
+*/
 void print_array(unsigned char *arr, int len){
   for (int i = 0; i < len;  i++){
-    printf(" %d, ", arr[i]);
+    if (i%8==0)
+      printf("\n");
+    printf(" %d ", arr[i]);
   }
+  printf("\n\n");
+}
+
+void sort_array(unsigned char *arr, int len){
+
+}
+
+int find_median(unsigned char *ptr, int len){
+  int mid = len/2;
+  return ptr[mid];
+}
+
+int find_maximum(unsigned char *arr, int len){
+  int max = 0;
+
+  for (int i =0; i < len; i++){
+    if (arr[i] > max)
+      max = arr[i];
+  }
+  return max;
+}
+
+int find_minimum(unsigned char *arr, int len){
+  int min = arr[0];
+
+  for (int i = 0; i < len; i++){
+    if (arr[i] < min)
+      min = arr[i];
+  }
+  return min;
+}
+
+int find_mean(unsigned char *arr, int len){
+  int mean = 0;
+
+  for (int i = 0; i < len; i++){
+    mean += arr[i];
+  }
+  return (mean / len);
+  
 }
